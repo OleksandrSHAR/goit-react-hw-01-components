@@ -15,7 +15,7 @@ display: block;
 width: 15px;
 height: 15px;
 border-radius: 100%;
- background-color:${ props=> props.isOnline? props.theme.colors.green : props.theme.colors.red };
+ background-color:  ${ props=> {return props.isOnline?  'green'  :  'red' } };  
     
 `
 export const Name=styled.p`
