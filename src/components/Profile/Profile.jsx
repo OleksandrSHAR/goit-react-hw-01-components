@@ -1,28 +1,39 @@
-export const Profile = ({ username, avatar, tag, location, stats }) => {
-    return (<div class="profile" >
-  <div class="description">
-    <img
-    src={avatar}
-                alt="User avatar"
-                 class="avatar"
-     />
-    <p class="name">{username}</p>
-    <p class="tag">@{tag}</p>
-    <p class="location" >{location}</p>
-  </div>
+import {
+  ProfileStyle,
+  Description,
+  AvatarStyle,
+  Name,
+  Tag,
+  Location,
+  Stats,
+  Item,
+ 
+} from "./Profile.styled" 
 
-  <ul class="stats">
-    <li>
-      <span class="label">Followers</span>
-      <span class="quantity">{stats.followers}</span>
-    </li>
-    <li>
-      <span class="label">Views</span>
-      <span class="quantity">{stats.views}</span>
-    </li>
-    <li>
-      <span class="label">Likes</span>
-      <span class="quantity">{stats.likes}</span>
-    </li>
-  </ul>
-</div>)}
+
+export const Profile = ({ username, avatar, tag, location, stats }) => {
+    return (<ProfileStyle>
+  <Description>
+    <AvatarStyle
+    src={avatar}
+    alt="User avatar" />
+    <Name>{username}</Name>
+    <Tag>@{tag}</Tag>
+    <Location >{location}</Location>
+  </Description>
+
+  <Stats>
+    <Item>
+      <span>Followers</span>
+      <span>{stats.followers}</span>
+    </Item>
+    <Item>
+      <span>Views</span>
+      <span>{stats.views}</span>
+    </Item>
+    <Item>
+      <span>Likes</span>
+      <span>{stats.likes}</span>
+    </Item>
+  </Stats>
+</ProfileStyle>)}

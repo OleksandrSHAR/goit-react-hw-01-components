@@ -1,13 +1,22 @@
-export const Statistics = ({stats,title}) => {
+import {
+  StatisticsStyle,
+  StatList,
+  TitelStale,
+  Item,
+} from "./Statistics.styled"
+
+
+
+export const Statistics = ({ stats, title }) => {
     return (
-<section class="statistics">
- {title && <h2 class="title">{title}</h2>}
-   <ul class="stat-list">
+<StatisticsStyle>
+ {title && <TitelStale>{title}</TitelStale>}
+   <StatList>
     {stats.map((item, idx) =>
-    <li class="item" key={item.id} id={item.id} index={idx}>
-    <span class="label">{item.label}</span>
-    <span class="percentage">{item.percentage}%</span>
-    </li>)}      
-  </ul>
-</section>)
+    <Item key={item.id} id={item.id} index={idx}>
+    <span >{item.label}</span>
+    <span >{item.percentage}%</span>
+    </Item>)}      
+  </StatList>
+</StatisticsStyle>)
 } 

@@ -1,16 +1,24 @@
-export const TransactionHistory = ({item}) => {
-      return(<table class="transaction-history">
+import {
+  TransactionHistoryStyle,
+  Tr,
+  Tbody,
+  Td
+} from "./TransactionHistory.styled"
+
+
+export const TransactionHistory = ({ items }) => {
+      return(<TransactionHistoryStyle>
   
           <thead>
-      <tr>
+      <Tr>
        <th>Type</th>
         <th>Amount</th>
         <th>Currency</th>
-      </tr>
+      </Tr>
     </thead>
 
-    <tbody>
-    {item.map((item, idx) => {
+    <Tbody>
+    {items.map((item ) => {
     return (
     <TableRow
     id={item.id}
@@ -18,17 +26,19 @@ export const TransactionHistory = ({item}) => {
     type={item.type}
     amount={item.amount}
     currency={item.currency}
-    index={idx } />
+      />
         )
     })}
-  </tbody>
-</table>)
+  </Tbody>
+</TransactionHistoryStyle>)
 }
 
-const TableRow = ({ type, amount, currency, index }) => {
-    return(<tr idx={index}>
-    <td>{type}</td>
-      <td>{amount}</td>
-      <td>{currency}</td>
-    </tr>)
+const TableRow = ({ type, amount, currency,  }) => {
+    return(<Tr  >
+     
+    <Td>{type}</Td>
+      <Td>{amount}</Td>
+      <Td>{currency}</Td>
+    </Tr>)
 }
+ 
