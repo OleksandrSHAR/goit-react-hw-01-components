@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 body {
@@ -8,7 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: ${props=>props.theme.colors.greu};
+  background-color: ${props => props.theme.colors.greu};
 }
 
 code {
@@ -27,4 +27,4 @@ p{
 h2{
   margin:0;
 }
-`
+`;
